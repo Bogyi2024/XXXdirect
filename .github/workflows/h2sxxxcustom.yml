@@ -1,4 +1,4 @@
-name: Windows - H2S - XXX - CUSTOM
+name: Windows - H2S - XXX - CUSTOM DUAL
 
 on:
   workflow_dispatch:
@@ -19,5 +19,5 @@ jobs:
       - name: Downloading & Running Essentials
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Bogyi2024/log/main/directxxxcustom.bat" -OutFile "directxxxcustom.bat"
-          cmd /c directxxxcustom.bat
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Bogyi2024/log/main/directxxxdualcustom.bat" -OutFile "directxxxdualcustom.bat"
+          cmd /c directxxxdualcustom.bat
