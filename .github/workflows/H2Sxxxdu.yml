@@ -8,9 +8,16 @@ jobs:
     name: Start Building...
     runs-on: windows-latest
   
-    
     steps:
-      - name: Downloading & Installing Essentials
-        run: |
+      - name: Install dependencies
+        shell: pwsh
+        run: |        
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install google-api-python-client>=2.0.0 google-auth-httplib2>=0.1.0 google-auth-oauthlib>=0.4.0
+          python -m pip install yagmail chardet wheel oauth2client
+          python -m pip install git+https://github.com/monsterhunters/srtmerge.git --no-build-isolation
+      - name: Downloading & Running Essentials
+        shell: pwsh
+        run: |    
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Bogyi2024/log/main/directxxx720dual.bat" -OutFile "directxxx720dual.bat"
           cmd /c directxxx720dual.bat
